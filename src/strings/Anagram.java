@@ -12,7 +12,7 @@ public class Anagram {
         for(int i=0;i< str.length-1;i++)
         {
             String temp=str[i];
-            if(map.get(temp)!=null)
+            if(map.get(temp)==null)
             {
                 List<String> list=new ArrayList<>();
                 map.put(temp,list);
