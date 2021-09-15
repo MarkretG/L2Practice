@@ -2,7 +2,7 @@
 input:[1,2,3]
 output:[1,2,4]
  */
-package Arrays;
+package arrays;
 import java.util.Arrays;
 public class Add {
     public static int[] plusOne(int[] digits) {

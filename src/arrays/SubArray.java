@@ -2,7 +2,7 @@
 input:[1,2,3,7,5]    sum=12
 output:2 4
  */
-package Arrays;
+package arrays;
 public class SubArray {
     public static void main(String[] args) {
         int[] arr=ArrayUtil.INSTANCE.getArray();

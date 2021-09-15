@@ -3,7 +3,7 @@ input:[1,2,3,4,5]
 output:[1,2,3,4,5]....arr length times rotate
  */
 
-package Arrays;
+package arrays;
 import java.util.Arrays;
 public class RotateArray {
     private static  int[] rotateArray(int[] arr)

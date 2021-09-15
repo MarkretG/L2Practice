@@ -3,7 +3,7 @@ input:[1,2,3,4]
 output:2....peak element index
  */
 
-package Arrays;
+package arrays;
 public class PeakElement {
     private static int findPeakIndex(int[] arr,int len)
     {

@@ -5,7 +5,7 @@ output:4
 good pair condition (i<j)...arr[i]==arr[j]
  */
 
-package Arrays;
+package arrays;
 public class GoodPair {
     private static int getCountOfGoodPair(int[] arr)
     {

@@ -2,7 +2,7 @@
 input:[1,1,1,-4,5,6]
 output:max 11....[5,6]
  */
-package Arrays;
+package arrays;
 public class MaxSumContiguousSubArray {
     public static void main(String[] args) {
         //int[] arr=ArrayUtil.INSTANCE.getArray();

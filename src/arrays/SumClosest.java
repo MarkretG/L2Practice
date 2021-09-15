@@ -13,7 +13,7 @@ arr[] = {1, 2, 3, 4, 5}
 Output: 4 5
 Explanation: As 4 + 5 = 9 is closest to 10.
  */
-package Arrays;
+package arrays;
 public class SumClosest {
     private static  void sumClosest(int[] arr,int sum)
     {

@@ -4,7 +4,7 @@ output:1
 1+5=6.....3+2=5...diff=6-5=1
  */
 
-package Arrays;
+package arrays;
 public class BalancedArray {
     private static int findBalancedArrayDiff(int[] arr)
     {

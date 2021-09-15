@@ -4,7 +4,7 @@ output:4
 the frequency of 4 is greater  than the half of the size of array
  */
 
-package Arrays;
+package arrays;
 import java.util.HashMap;
 import java.util.Map;
 public class Majority {

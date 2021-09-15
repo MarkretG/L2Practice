@@ -2,7 +2,7 @@
 input:[1,2,3,4,5]
 output:[2,1,4,3,5]
  */
-package Arrays;
+package arrays;
 import java.util.Arrays;
 public class WaveArray {
     public static void main(String[] args) {

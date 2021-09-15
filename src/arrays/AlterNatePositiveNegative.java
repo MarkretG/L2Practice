@@ -1,4 +1,4 @@
-package Arrays;
+package arrays;
 import java.util.Arrays;
 public class AlterNatePositiveNegative {
     private  static  int[] getAlternateArray(int[] arr) {

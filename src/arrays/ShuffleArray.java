@@ -3,7 +3,7 @@ input:[2,5,1,3, 4,7] n=3...2n array elements
 output:[2,3,5,4,1,7]....x1,y1,x2,y2...
  */
 
-package Arrays;
+package arrays;
 import java.util.Arrays;
 public class ShuffleArray {
     private static int[] getShuffleArray(int[] arr)

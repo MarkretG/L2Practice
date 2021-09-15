@@ -3,7 +3,7 @@ input:[2,2,1]
 output:1
  */
 
-package Arrays;
+package arrays;
 import java.util.HashMap;
 import java.util.Map;
 public class SingleNumber {

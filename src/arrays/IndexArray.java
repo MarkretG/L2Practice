@@ -2,7 +2,7 @@
 input:[1,2,3,4,5,6,7,8,9,10] ..key=8
 output:7
  */
-package Arrays;
+package arrays;
 import java.util.Arrays;
 public class IndexArray {
     private static int findIndexOfGivenKey(int[] arr,int key)

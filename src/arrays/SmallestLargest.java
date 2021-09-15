@@ -4,7 +4,7 @@ k=3 kth smallest N=2 nth largest
 output:7+15=22
  */
 
-package Arrays;
+package arrays;
 import java.util.Arrays;
 public class SmallestLargest {
     public static void main(String[] args) {
