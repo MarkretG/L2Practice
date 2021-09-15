@@ -20,24 +20,12 @@ public class DiagonalMatrixSort {
         int[] arr=new int[n];
         for(int i=0;i<n;i++)
         {
-            for(int j=0;j<n;j++)
-            {
-                if(i==j)
-                {
-                    arr[i]=mat[i][j];
-                }
-            }
+            arr[i]=mat[i][i];
         }
         sort(arr,n);
         for(int i=0;i<n;i++)
         {
-            for(int j=0;j<n;j++)
-            {
-                if(i==j)
-                {
-                    mat[i][j]=arr[i];
-                }
-            }
+            mat[i][i]=arr[i];
         }
         return mat;
     }
