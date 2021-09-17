@@ -1,23 +1,20 @@
-/*package Arrays;
-
+package arrays;
 public class JumpGame {
-    private  static int findMinJump(int[] arr)
+    private  static boolean isReachOurGoal(int[] arr)
     {
-        int min=0;
-        int len=arr.length-1;
-        if(arr[0]==len)
+        int goal=arr.length-1;
+        for(int i=arr.length-1;i>=0;i--)
         {
-            return 1;
+            if(arr[i]+i>=goal)
+            {
+                goal=i;
+            }
         }
-        for(int i=0;i<arr.length;i++)
-        {
-            int num=arr[i];
-            if(len-arr[num]==)
-        }
+        return goal==0;
     }
     public static void main(String[] args) {
         int[] arr=ArrayUtil.INSTANCE.getArray();
-        int min=findMinJump(arr);
-        System.out.println(min);
+        boolean result=isReachOurGoal(arr);
+        System.out.println(result);
     }
-}*/
+}
