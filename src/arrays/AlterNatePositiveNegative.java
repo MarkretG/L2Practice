@@ -1,19 +1,28 @@
+/**
+ Input:
+ N = 9
+ Arr[] = {9, 4, -2, -1, 5, 0, -5, -3, 2}
+ Output:
+ 9 -2 4 -1 5 -5 0 -3 2
+
+ */
+
 package arrays;
 import java.util.Arrays;
 public class AlterNatePositiveNegative {
     private  static  int[] getAlternateArray(int[] arr) {
-        int[] possitive = new int[arr.length];
+        int[] positive = new int[arr.length];
         int[] negative=new int[arr.length];
         int k = 0;
         int r=0;
         for (int i=0;i<arr.length;i++)
         {
-            if(k%2==0)
+            if(arr[i]>=0)
             {
-                possitive[k++]=arr[i];
+                positive[k++]=arr[i];
             }
             else {
-                negative[k++]=arr[i];
+                negative[r++]=arr[i];
             }
         }
         int m = 0;
@@ -22,7 +31,7 @@ public class AlterNatePositiveNegative {
         while (l<k&&m<r){
             if (n%2==0)
             {
-                arr[n++]=possitive[l++];
+                arr[n++]=positive[l++];
             }
             else {
                 arr[n++] =negative[m++];
@@ -30,16 +39,17 @@ public class AlterNatePositiveNegative {
         }
         while (l<k)
         {
-            arr[n++]=possitive[l++];
+            arr[n++]=positive[l++];
         }
         while (m<r)
         {
-            arr[n++]=possitive[m++];
+            arr[n++]=negative[m++];
         }
         return arr;
     }
     public static void main(String[] args) {
-        int[] arr=ArrayUtil.INSTANCE.getArray();
+        //int[] arr=ArrayUtil.INSTANCE.getArray();
+        int[] arr= {-5, -2, 5, 2, 4, 7, 1, 8, 0, -8};
         int[] result=getAlternateArray(arr);
         System.out.println(Arrays.toString(result));
     }
