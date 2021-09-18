@@ -9,16 +9,19 @@
 
 package sorting;
 
+import java.util.Arrays;
 import java.util.List;
 
-/*public class FrequencyBasedSort {
-    private static List<Integer> frequencyBased()
+public class FrequencyBasedSort {
+    /*private static List<Integer> frequencyBasedSort(List<Integer> list)
     {
 
-    }
+    }*/
     public static void main(String[] args) {
         int[] arr={2, 5, 2, 8, 5, 6, 8, 8};
+        Arrays.asList(arr);
+        //frequencyBasedSort(list);
 
 
     }
-}*/
+}
