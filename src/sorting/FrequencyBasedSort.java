@@ -9,54 +9,31 @@ package sorting;
 import java.util.*;
 
 public class FrequencyBasedSort {
-    private static List<Integer> frequencyBasedSort(List<Integer> list,Integer[] arr)
-    {
-        Map<Integer,Integer> mapCount=new HashMap<>();
-        Map<Integer,Integer> mapIndex=new HashMap<>();
-        for(int i=0;i<arr.length;i++)
-        {
-          if(mapCount.containsKey(arr[i]))
-          {
-              mapCount.put(arr[i], mapCount.get(arr[i])+1);
-          }
-          else {
-              mapCount.put(arr[i],1);
-              mapIndex.put(arr[i],i);
-          }
+    private static int[] frequencyBasedSort(int[] arr) {
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < arr.length; i++) {
+            map.put(arr[i], map.getOrDefault(arr[i], 0) + 1);
         }
-
-
-        // System.out.println(mapCount);
-        //System.out.println(mapIndex);
-        Collections.sort(list, new Comparator<Integer>() {
+        List<Map.Entry<Integer, Integer>> list = new ArrayList<>(map.entrySet());
+        Collections.sort(list, new Comparator<Map.Entry<Integer, Integer>>() {
             @Override
-            public int compare(Integer o1, Integer o2)
-            {
-                /*{2=2, 5=2, 6=1, 8=3}
-                {2=0, 5=1, 6=5, 8=3}*/
-               // Input:  arr[] = {2, 5, 2, 8, 5, 6, 8, 8}
-                System.out.println(list);
-                int frq1=mapCount.get(o1);
-                int frq2=mapCount.get(o2);
-                if(frq1!=frq2)
-                {
-                    return frq2-frq1;
-                }
-                else {
-                    return mapIndex.get(o1)-mapIndex.get(o2);
-
-                }
-
-
+            public int compare(Map.Entry<Integer, Integer> o1, Map.Entry<Integer, Integer> o2) {
+                return o2.getValue()-o1.getValue();
             }
         });
-        return list;
-
+        int k=0;
+        for(Map.Entry<Integer,Integer> entry:list)
+        {
+            for (int i=0;i<entry.getValue();i++)
+            {
+               arr[k++]=entry.getKey();
+            }
+        }
+        return arr;
     }
     public static void main(String[] args) {
-        Integer[] arr={2, 5, 2, 8, 5, 6, 8, 8};
-        List<Integer> list=Arrays.asList(arr);
-        List<Integer> result =frequencyBasedSort(list,arr);
-        System.out.println(result);
+        int[] arr={2, 5, 2, 8, 5, 6, 8, 8};
+        int[] result=frequencyBasedSort(arr);
+        System.out.println(Arrays.toString(result));
     }
 }
