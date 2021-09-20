@@ -52,15 +52,15 @@ public class CheckBst {
             if (!(currentRoot.left.data < currentRoot.data && root.left.data < root.data)) {
                 return false;
             }
+            isBST(currentRoot.left,root);
         }
-        if (currentRoot.right!=null) {
+        else if (currentRoot.right!=null) {
             if (!(currentRoot.right.data > currentRoot.data && root.right.data > root.data)) {
                 return false;
             }
+            isBST(currentRoot.right,root);
         }
-        else {
-            isBST(currentRoot.left, root);
-        }
+
         return true;
     }
     public static void main(String[] args) {
