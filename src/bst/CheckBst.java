@@ -1,3 +1,4 @@
+/*
 package bst;
 public class CheckBst {
     class Node{
@@ -42,9 +43,30 @@ public class CheckBst {
         }
         return root;
     }
-    private boolean isBST(Node currentRoot,Node root)
+    private boolean isBST(Node root,Node l,Node r)
     {
-        if (root==null)
+        if (root == null)
+            return true;
+
+        // if left node exist then check it has
+        // correct data or not i.e. left node's data
+        // should be less than root's data
+        if (l != null && root.data <= l.data)
+            return false;
+
+        // if right node exist then check it has
+        // correct data or not i.e. right node's data
+        // should be greater than root's data
+        if (r != null && root.data >= r.data)
+            return false;
+
+        // check recursively for every node.
+        return isBST(root.left, l, root) &&
+                isBST(root.right, root, r);
+    }
+
+        */
+/*if (root==null)
         {
             return false;
         }
@@ -61,16 +83,20 @@ public class CheckBst {
             isBST(currentRoot.right,root);
         }
 
-        return true;
-    }
+        return true;*//*
+
+
     public static void main(String[] args) {
         CheckBst bst=new CheckBst();
         Node root=null;
-        root=bst.insertRec(root,4);
-        bst.insertRec(root,2);
-        bst.insertRec(root,1);
+        root=bst.insertRec(root,2);
+        root.left=new Node(1);
+        root.right=bst.insertRec(root,3);
+        //bst.insertRec(root,1);
+       // bst.insertRec(root,3);
         bst.inOrderRec(root);
-        boolean result=bst.isBST(root,root);
+        boolean result=bst.isBST(root,null,null);
         System.out.println(result);
     }
 }
+*/
