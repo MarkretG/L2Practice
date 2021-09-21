@@ -11,12 +11,15 @@ public class Anagram {
         }
         for(int i=0;i< str.length-1;i++)
         {
-            String temp=str[i];
-            if(map.get(temp)==null)
+            if(str[i].equals("visited"))
             {
-                List<String> list=new ArrayList<>();
-                map.put(temp,list);
+                continue;
             }
+            String temp=str[i];
+            char[] ch=str[i].toCharArray();
+            Arrays.sort(ch);
+            String sortedString=new String(ch);
+
             for (int j=i+1;j< str.length;j++)
             {
                 if(temp.length()!=str[j].length())
@@ -27,8 +30,9 @@ public class Anagram {
                 char[] chars=str[j].toCharArray();
                 Arrays.sort(chars);
                 String current=new String(chars);
-                if(temp.equals(current))
+                if(sortedString.equals(current))
                 {
+                    str[j]="visited";
                     List<String> list=map.getOrDefault(temp,new ArrayList<>());
                     list.add(temp1);
                     map.put(temp,list);
