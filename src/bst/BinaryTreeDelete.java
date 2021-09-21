@@ -1,5 +1,6 @@
 package bst;
 public class BinaryTreeDelete {
+    static  Node mainRoot=null;
     class Node{
         int data;
         Node left,right;
@@ -11,15 +12,7 @@ public class BinaryTreeDelete {
             this.right=null;
         }
     }
-    Node root;
-    BinaryTreeDelete()
-    {
-        root=null;
-    }
-    public  void  deleteKey(int key)
-    {
-        root=deleteRec(root,key);
-    }
+
     private Node deleteRec(Node root,int key) {
         //tree is empty
         if (root == null) {
@@ -35,7 +28,7 @@ public class BinaryTreeDelete {
             } else if (root.right == null) {
                 return root.left;
             } else {
-                root.data = findInOrderSuccessor(root);
+                root.data = findInOrderSuccessor(root.right);
                 //delete inorderSuccessor
                 root.right=deleteRec(root.right,root.data);
             }
@@ -59,12 +52,13 @@ public class BinaryTreeDelete {
         }
         return root;
     }
-    public void insert(int key)
-    {
-        root=insertRec(root,key);
-    }
+
     private int findInOrderSuccessor(Node root)
     {
+        if(root==null)
+        {
+            return mainRoot.data;
+        }
         int min=root.data;
         while (root.left!=null)
         {
@@ -73,40 +67,39 @@ public class BinaryTreeDelete {
         }
         return min;
     }
-    public void inorder()
-    {
-        inorderRec(root);
-    }
     public void inorderRec(Node root)
     {
         if(root!=null)
         {
-            inorderRec(root.left);
             System.out.print(root.data+" ");
+            inorderRec(root.left);
             inorderRec(root.right);
+
+
         }
     }
 
     public static void main(String[] args) {
         BinaryTreeDelete binaryTreeDelete=new BinaryTreeDelete();
-        binaryTreeDelete.insert(50);
-        binaryTreeDelete.insert(30);
-        binaryTreeDelete.insert(20);
-        binaryTreeDelete.insert(40);
-        binaryTreeDelete.insert(70);
-        binaryTreeDelete.insert(80);
-        binaryTreeDelete.insert(60);
 
-        binaryTreeDelete.inorder();
-        binaryTreeDelete.deleteKey(20);
+       binaryTreeDelete.mainRoot =  binaryTreeDelete.insertRec(mainRoot,20);
+        binaryTreeDelete.insertRec(mainRoot,10);
+        binaryTreeDelete.insertRec(mainRoot,25);
+        binaryTreeDelete.insertRec(mainRoot,8);
+        binaryTreeDelete.insertRec(mainRoot,15);
+        binaryTreeDelete.insertRec(mainRoot,27);
+        binaryTreeDelete.insertRec(mainRoot,30);
+
+        binaryTreeDelete.inorderRec(mainRoot);
+        binaryTreeDelete.deleteRec(mainRoot,10);
         System.out.println();
-        binaryTreeDelete.inorder();
-        binaryTreeDelete.deleteKey(40);
+        binaryTreeDelete.inorderRec(mainRoot);
+        /*.deleteKey(40);
         System.out.println();
         binaryTreeDelete.inorder();
         binaryTreeDelete.deleteKey(50);
         System.out.println();
         binaryTreeDelete.inorder();
-
+*/
     }
 }
